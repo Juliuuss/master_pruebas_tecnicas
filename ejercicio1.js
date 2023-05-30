@@ -29,7 +29,7 @@ Muestra la información de todos los superheroes
  
 */
 
-// crear array de super heroes de marvel.
+// crear objeto de super heroes de marvel.
 const infoSuperheroes = {
   "Iron Man": {
     nombreReal: "Tony Stark",
@@ -59,16 +59,31 @@ const infoSuperheroes = {
 };
 
 function info_superheroe(aka) {
+  console.log(`#########${aka}########`);
   //comprobar si existe el super hereo
   if (aka in infoSuperheroes) {
     //guardar la info del superheroe
     const informacion = infoSuperheroes[aka];
 
     //mostrar la info
-    console.log(informacion);
+    console.log(`Nombre real: ${informacion.nombreReal}`);
+    console.log(`Poderes: ${informacion.poderes.join(", ")}`);
+    console.log(`Equipo: ${informacion.equipo}`);
   } else {
-    console.log("No hay datos");
+    console.log(`${aka} No esta en la base de datos`);
   }
 }
 
-info_superheroe("Iron Man");
+info_superheroe("Thor");
+
+const mostrar_info_superheroes = (akas) => {
+  //recorrer todos los nombres
+  akas.forEach((name) => {
+    //Comprobar si existe cada nombre en cada iteracion
+
+    //mostrar la info
+    info_superheroe(name);
+  });
+};
+
+mostrar_info_superheroes(["Iron Man", "Weon que no existe", "Thor"]);
