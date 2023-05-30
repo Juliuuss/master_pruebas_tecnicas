@@ -30,10 +30,45 @@ Muestra la información de todos los superheroes
 */
 
 // crear array de super heroes de marvel.
-const info_superheroes = {
-    'Iron Man' :{
-        nombre_real :'Tony Stark'
-    },
-    'Capitan America': {},
+const infoSuperheroes = {
+  "Iron Man": {
+    nombreReal: "Tony Stark",
+    poderes: ["Tecnologia avanzada", "Movilidad aérea"],
+    equipo: "Los vengadores",
+  },
+  "Capitán América": {
+    nombreReal: "Steve Rogers",
+    poderes: ["Fuerza sobrehumana", "Agilidad y reflejos sobresalientes"],
+    equipo: "Los vengadores",
+  },
+  Thor: {
+    nombreReal: "Thor Odinson",
+    poderes: ["Mjolnir", "Viento y trueno"],
+    equipo: "Los vengadores",
+  },
+  "Spider-Man": {
+    nombreReal: "Peter Parker",
+    poderes: ["Balanceo", "Telarañas pegajosas", "Sentido aracnido"],
+    equipo: "Los vengadores",
+  },
+  Hulk: {
+    nombreReal: "Bruce Banner",
+    poderes: ["Fuerza sobrehumana", "Invulnerabilidad"],
+    equipo: "Los vengadores",
+  },
+};
 
+function info_superheroe(aka) {
+  //comprobar si existe el super hereo
+  if (aka in infoSuperheroes) {
+    //guardar la info del superheroe
+    const informacion = infoSuperheroes[aka];
+
+    //mostrar la info
+    console.log(informacion);
+  } else {
+    console.log("No hay datos");
+  }
 }
+
+info_superheroe("Iron Man");
